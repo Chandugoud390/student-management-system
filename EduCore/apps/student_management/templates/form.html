@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extra_css %}{% endblock %}
+
+{% block content %}
+
+<div class="'pagetitle">
+    <h1>Student Form</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="#">student List</a></li>
+
+        </ol>
+    </nav>
+
+</div>
+
+<section class="section dashboard">
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ title }}</h5>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">{{ title }}</button>
+                    </form>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Instructions</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-info-circle text-primary"></i> Fill in all required fields marked with *
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-calendar text-primary"></i> Birth date must be in the past
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-image text-primary"></i> photo is optional but recommended
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-shield-check text-primary"></i> All information is kept confidential
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+
+{% block extra_scripts %}{% endblock %}
